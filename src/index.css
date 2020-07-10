@@ -12,3 +12,6 @@ body {
   justify-content: space-between;
   padding: 40px 0;
 }
+.addPost {
+  background-color: aqua;
+}
