@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ListItem } from './components/ListItem';
-import { Route, BrowserRouter } from 'react-router-dom';
+import { Route, BrowserRouter, Switch } from 'react-router-dom';
 import { PostPage } from './components/PostPage';
 import { HomePage } from "./components/HomePage"
 
@@ -12,8 +12,10 @@ function App() {
   return (
     <BrowserRouter>
     <div className="App">
-      <Route path="/postPage/?" render={ ()=> <PostPage/> } />
+      <Switch>
+      <Route path="/postPage/:id?" render={ ()=> <PostPage/> } />
       <Route exact path="/" render={ () => <HomePage posts={ posts }/> }/>
+      </Switch>
     </div>
     </BrowserRouter>
   );
