@@ -1,5 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 export const PostPage =(props) => {
+  useEffect(() => {
+    document.title = props.location.pageProps.title;
+  });
   return (
 <div className="postPage">
   <title>{ props.location.pageProps.title } </title>

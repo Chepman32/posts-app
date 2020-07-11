@@ -6,9 +6,9 @@ import { AddPostPage } from './components/AddPostPage';
 
 function App() {
   
-  const [ posts, setPosts ] = useState([{id: 1, title: "Моя первая запись", text: "Здесь должно быть какое-то описание", author: "John"},
-  {id: 2, title: "Моя вторая запись", text: "Здесь должно быть какое-то описание", author: "John"},
-  {id: 3, title: "Моя третья запись", text: "Здесь должно быть какое-то описание", author: "John"}]);
+  const [ posts, setPosts ] = useState([{id: 1, title: "Моя первая запись", text: "Здесь должно быть какое-то описание", author: "Андрей"},
+  {id: 2, title: "Моя вторая запись", text: "Здесь должно быть какое-то описание", author: "Василий"},
+  {id: 3, title: "Моя третья запись", text: "Здесь должно быть какое-то описание", author: "Михаил"}]);
   const addPost = (title, text, author) => {
     const newPost = {
       id: Date.now().toString(), title, text, author
@@ -21,7 +21,7 @@ function App() {
     <BrowserRouter>
     <div className="App">
       <nav className="navbar">
-      <NavLink className="navbar__item" to="/add-post">AddPost</NavLink>
+      <NavLink className="navbar__item" to="/add-post">Новая запись</NavLink>
       <NavLink className="navbar__item" to="/">Главная</NavLink>
       </nav>
       <Switch>

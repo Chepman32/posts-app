@@ -1,5 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 export const AddPostPage = (props) => {
+  useEffect(() => {
+    document.title = "Добавление записи"
+  });
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
   const [text, setText] = useState("");
@@ -43,7 +46,7 @@ alert("Заполните все поля")
       <input type="text" className="addPost__input titleInput" value={ title } placeholder="введите заголовок" onChange={ e => setTitle(e.target.value) } />
       <input type="text" className="addPost__input textInput" value={ text } placeholder="введите текст поста" onChange={ e => setText(e.target.value) } />
       <input type="text" className="addPost__input authorInput" value={ author } placeholder="введите имя автора" onChange={ e => setAuthor(e.target.value) } />
-      <button onClick= {(e) => addPostHandler(e)}>Add</button>
+      <button className="addPost__button" onClick= {(e) => addPostHandler(e)}>Add</button>
     </div>
   );
 };
