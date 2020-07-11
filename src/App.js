@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Route, BrowserRouter, Switch } from 'react-router-dom';
+import { Route, BrowserRouter, Switch, Redirect, NavLink } from 'react-router-dom';
 import { PostPage } from './components/PostPage';
 import { HomePage } from "./components/HomePage"
 import { AddPostPage } from './components/AddPostPage';
@@ -11,7 +11,7 @@ function App() {
   {id: 3, title: "Моя третья запись", text: "Здесь должно быть какое-то описание", author: "John"}]);
   const addPost = title => {
     const newPost = {
-      id: new Date.now().toString(),
+      id: Date.now().toString(),
       title: title
     };
     setPosts(prev => [
@@ -21,10 +21,15 @@ function App() {
   return (
     <BrowserRouter>
     <div className="App">
+      <nav className="navbar">
+      <NavLink className="navbar__item" to="/add-post">AddPost</NavLink>
+      <NavLink className="navbar__item" to="/">Главная</NavLink>
+      </nav>
       <Switch>
       <Route path={`/postPage/:id?`} render={ (routerProps)=> <PostPage {...routerProps}/> } />
       <Route exact path="/" render={ () => <HomePage posts={ posts } addPost={addPost} /> }/>
-      <Route path="add-post" component={AddPostPage} />
+      <Route path="/add-post" render={() => <AddPostPage addPost={ addPost } />} />
+      <Redirect to="/"/>
       </Switch>
     </div>
     </BrowserRouter>
