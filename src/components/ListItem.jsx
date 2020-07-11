@@ -6,7 +6,7 @@ export const ListItem = (props) => {
       <h3 className="listItem__title">{ props.title } </h3>
       <p className="listItem__text">{ props.text } </p>
       <h5 className="listItem author">{ props.author } </h5>
-      <NavLink to={{
+      <NavLink className="listItem__link" to={{
         pathname: "/postPage/id/" + props.id,
         pageProps: {
           title: props.title,

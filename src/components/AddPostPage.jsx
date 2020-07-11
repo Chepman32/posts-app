@@ -5,11 +5,13 @@ export const AddPostPage = (props) => {
   const [text, setText] = useState("");
   const  addPostHandler = () => {
     if(titleValidator() && textValidator() && authorValidator()) {
-      props.addPost(title);
+      props.addPost(title, text, author);
     setTitle("");
+    setText("");
+    setAuthor();
     }
     else {
-
+alert("Заполните все поля")
     }
   };
   const titleValidator =() => {
@@ -36,9 +38,6 @@ export const AddPostPage = (props) => {
       return false;
     }
   };
-  const DispWarning = () => {
-    if(!titleValidator()) {}
-  }
   return (
     <div className="addPost">
       <input type="text" className="addPost__input titleInput" value={ title } placeholder="введите заголовок" onChange={ e => setTitle(e.target.value) } />
@@ -46,5 +45,5 @@ export const AddPostPage = (props) => {
       <input type="text" className="addPost__input authorInput" value={ author } placeholder="введите имя автора" onChange={ e => setAuthor(e.target.value) } />
       <button onClick= {(e) => addPostHandler(e)}>Add</button>
     </div>
-  )
-}
+  );
+};

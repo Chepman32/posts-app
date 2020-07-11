@@ -1,3 +1,8 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
 body {
   margin: 0;
   padding: 0 50px;
@@ -14,4 +19,29 @@ body {
 }
 .addPost {
   background-color: aqua;
+}
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: rgb(64, 97, 206);
+}
+.navbar__item {
+  text-decoration: none;
+  color: #fff;
+  font-size: 2em;
+  font-weight: bold;
+}
+.navbar__item:hover {
+  color: rgb(206, 153, 88);
+}
+.listItem__link {
+  text-decoration: none;color: rgb(106, 134, 187);
+  font-weight: 500;
+  height: 1.5em;
+}
+.listItem__link:hover {
+  border-bottom: 1px solid black;
 }

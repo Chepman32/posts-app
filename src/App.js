@@ -9,10 +9,9 @@ function App() {
   const [ posts, setPosts ] = useState([{id: 1, title: "Моя первая запись", text: "Здесь должно быть какое-то описание", author: "John"},
   {id: 2, title: "Моя вторая запись", text: "Здесь должно быть какое-то описание", author: "John"},
   {id: 3, title: "Моя третья запись", text: "Здесь должно быть какое-то описание", author: "John"}]);
-  const addPost = title => {
+  const addPost = (title, text, author) => {
     const newPost = {
-      id: Date.now().toString(),
-      title: title
+      id: Date.now().toString(), title, text, author
     };
     setPosts(prev => [
       ...prev, newPost
