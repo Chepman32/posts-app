@@ -1,3 +1,7 @@
+/*
+Есть пару замечаний: 
+во-первых, я сделал стейт на хуках а не на Редаксе (если это критично могу переделать),
+ во-вторых, я не особо заморачивался со стилизацией потому что в задании главный акцент был сделан на функционале */
 import React, { useState } from 'react';
 import { Route, BrowserRouter, Switch, Redirect, NavLink } from 'react-router-dom';
 import { PostPage } from './components/PostPage';
